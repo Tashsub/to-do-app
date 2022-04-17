@@ -5,7 +5,6 @@ import TaskContainer from "./Components/TaskContainer";
 function App() {
 	return (
 		<Background>
-      <h1>dddddd</h1>
 			<TaskContainer />
 		</Background>
 	);

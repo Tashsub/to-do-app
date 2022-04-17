@@ -1,26 +1,11 @@
+@import "./AnimationOntoPage.scss"; 
+
 $padingValue: 1cm;
 
 $mainTaskConatiner: #414d56;
 
-@mixin shadow {
-	border: 2px solid;
-	padding: 10px;
-	box-shadow: 5px 10px #262d33;
-}
+$textColour: aliceblue; 
 
-@mixin contentComingInAimation {
-	animation-timing-function: ease-in-out;
-	// transition: 0.25s;
-}
-
-@keyframes mymove {
-	from {
-		left: 0px;
-	}
-	to {
-		left: 100px;
-	}
-}
 
 .container {
 	padding-left: $padingValue;
@@ -35,7 +20,32 @@ $mainTaskConatiner: #414d56;
 		width: 30cm;
 		background-color: $mainTaskConatiner;
 		border-radius: 25px;
-		animation: mymove 1s;
-		animation-timing-function: ease-out;
+        @include contentComingInAimation; 
 	}
+
+    &-title{
+        position: absolute;
+        color: $textColour;
+    }
+
+    &-all-tasks{
+        display: flex;
+        flex-direction: column;
+        margin-top: 2.5cm;
+        width: 100%;
+        height: 22cm;
+        border: #414d56;
+        border-style: double;
+    }
+    &-single-task{
+        position: relative;
+        margin-top: 0.2cm;
+        background-color: white;
+        height: 2cm;
+        width: 100%;
+        border-radius: 5px;
+        border: #414d56;
+        border-style: solid;
+    }
+
 }
