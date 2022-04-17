@@ -1,0 +1,41 @@
+$padingValue: 1cm;
+
+$mainTaskConatiner: #414d56;
+
+@mixin shadow {
+	border: 2px solid;
+	padding: 10px;
+	box-shadow: 5px 10px #262d33;
+}
+
+@mixin contentComingInAimation {
+	animation-timing-function: ease-in-out;
+	// transition: 0.25s;
+}
+
+@keyframes mymove {
+	from {
+		left: 0px;
+	}
+	to {
+		left: 100px;
+	}
+}
+
+.container {
+	padding-left: $padingValue;
+	padding-right: $padingValue;
+	padding-top: $padingValue;
+	padding-left: $padingValue;
+
+	&-task {
+        position: relative;
+		@extend .container;
+		height: 25cm;
+		width: 30cm;
+		background-color: $mainTaskConatiner;
+		border-radius: 25px;
+		animation: mymove 1s;
+		animation-timing-function: ease-out;
+	}
+}

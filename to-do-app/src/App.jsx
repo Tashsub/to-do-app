@@ -1,13 +1,14 @@
-import './App.css'
+import "./App.scss";
+import Background from "./Components/BackgroundWrapper";
+import TaskContainer from "./Components/TaskContainer";
 
 function App() {
-  
-
-  return (
-    <div className="App">
-     <p1>testing</p1>
-    </div>
-  )
+	return (
+		<Background>
+      <h1>dddddd</h1>
+			<TaskContainer />
+		</Background>
+	);
 }
 
-export default App
+export default App;
