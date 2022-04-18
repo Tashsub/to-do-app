@@ -1,51 +1,27 @@
+@use "./variables" as v; 
+
 @import "./AnimationOntoPage.scss"; 
-
-$padingValue: 1cm;
-
-$mainTaskConatiner: #414d56;
-
-$textColour: aliceblue; 
 
 
 .container {
-	padding-left: $padingValue;
-	padding-right: $padingValue;
-	padding-top: $padingValue;
-	padding-left: $padingValue;
+	padding-left: v.$padingValue;
+	padding-right: v.$padingValue;
+	padding-top: v.$padingValue;
+	padding-left: v.$padingValue;
 
-	&-task {
+	&-main {
         position: relative;
 		@extend .container;
 		height: 25cm;
 		width: 30cm;
-		background-color: $mainTaskConatiner;
-		border-radius: 25px;
+		background-color: v.$mainTaskConatiner;
+		border-radius: 20px;
         @include contentComingInAimation; 
 	}
 
     &-title{
         position: absolute;
-        color: $textColour;
-    }
-
-    &-all-tasks{
-        display: flex;
-        flex-direction: column;
-        margin-top: 2.5cm;
-        width: 100%;
-        height: 22cm;
-        border: #414d56;
-        border-style: double;
-    }
-    &-single-task{
-        position: relative;
-        margin-top: 0.2cm;
-        background-color: white;
-        height: 2cm;
-        width: 100%;
-        border-radius: 5px;
-        border: #414d56;
-        border-style: solid;
+        color: v.$textColour;
     }
 
 }

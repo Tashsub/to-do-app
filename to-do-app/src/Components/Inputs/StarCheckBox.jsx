@@ -1,0 +1,33 @@
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar as faSolidStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar as faRegularStar } from "@fortawesome/free-regular-svg-icons";
+import "../../scss/Inputs.scss";
+
+export default function StarCheckBox() {
+	let check = true;
+
+	const changeHandler = () => {
+		if (check === true) {
+			check = false;
+		} else if (check === false) {
+			check = true;
+		}
+
+		console.log(check);
+	};
+
+	return (
+		<div class="pretty p-icon p-toggle p-plain">
+			<input type="checkbox" onChange={changeHandler} defaultChecked={check}/>
+
+			<div class="state p-off">
+				<FontAwesomeIcon icon={faRegularStar} />
+			</div>
+
+			<div class="state p-on p-warning-o">
+				<FontAwesomeIcon icon={faSolidStar} />
+			</div>
+		</div>
+	);
+}

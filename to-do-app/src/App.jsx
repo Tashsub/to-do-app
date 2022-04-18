@@ -1,11 +1,10 @@
-import "./App.scss";
 import Background from "./Components/BackgroundWrapper";
-import TaskContainer from "./Components/TaskContainer";
+import MainContainer from "./Components/MainContainer";
 
 function App() {
 	return (
 		<Background>
-			<TaskContainer />
+			<MainContainer />
 		</Background>
 	);
 }

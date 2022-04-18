@@ -1,0 +1,20 @@
+@use "./variables" as v;
+@import "@djthoms/pretty-checkbox/src/pretty-checkbox.scss";
+@import "./fontawesome/regular.scss";
+@import "./fontawesome/solid.scss";
+
+
+$scallingFactor: 2;
+
+.center {
+	height: 100%;
+}
+
+input[type="checkbox"] {
+	-ms-transform: scale($scallingFactor); /* IE */
+	-moz-transform: scale($scallingFactor); /* FF */
+	-webkit-transform: scale($scallingFactor); /* Safari and Chrome */
+	-o-transform: scale($scallingFactor); /* Opera */
+	transform: scale($scallingFactor);
+	@extend .center;
+}
