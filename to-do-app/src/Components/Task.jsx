@@ -2,18 +2,19 @@ import React from "react";
 import "../scss/Task.scss";
 import "../scss/Inputs.scss";
 import StarCheckBox from "./Inputs/StarCheckBox";
+import TickCheckBox from "./Inputs/TickCheckBox";
 
-export default function Task() {
+export default function Task({completed, description, priority}) {
 	return (
-		<div className="single-task">
+		<div className="single-task grow">
 			<div className="checkbox-div">
-				<input type="checkbox"></input>
+				<TickCheckBox completed={completed} />
 			</div>
 			<div className="task-description-div">
-				<p1>Grocery Shop</p1>
+				<p>{description}</p>
 			</div>
 			<div className="star-div">
-				<StarCheckBox />
+				<StarCheckBox priority={priority}/>
 			</div>
 		</div>
 	);

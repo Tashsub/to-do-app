@@ -4,7 +4,8 @@ import { faStar as faSolidStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as faRegularStar } from "@fortawesome/free-regular-svg-icons";
 import "../../scss/Inputs.scss";
 
-export default function StarCheckBox() {
+export default function StarCheckBox({priority}) {
+	const iconSize = 'xl';
 	let check = true;
 
 	const changeHandler = () => {
@@ -18,15 +19,15 @@ export default function StarCheckBox() {
 	};
 
 	return (
-		<div class="pretty p-icon p-toggle p-plain">
-			<input type="checkbox" onChange={changeHandler} defaultChecked={check}/>
+		<div class="pretty p-icon p-toggle p-plain" style={{ margin:0}}>
+			<input type="checkbox" onChange={changeHandler} defaultChecked={priority}/>
 
 			<div class="state p-off">
-				<FontAwesomeIcon icon={faRegularStar} />
+				<FontAwesomeIcon icon={faRegularStar} size={iconSize} />
 			</div>
 
 			<div class="state p-on p-warning-o">
-				<FontAwesomeIcon icon={faSolidStar} />
+				<FontAwesomeIcon icon={faSolidStar} size={iconSize} />
 			</div>
 		</div>
 	);

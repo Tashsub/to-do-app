@@ -1,8 +1,5 @@
 @use "./variables" as v;
 @import "@djthoms/pretty-checkbox/src/pretty-checkbox.scss";
-@import "./fontawesome/regular.scss";
-@import "./fontawesome/solid.scss";
-
 
 $scallingFactor: 2;
 
@@ -18,3 +15,4 @@ input[type="checkbox"] {
 	transform: scale($scallingFactor);
 	@extend .center;
 }
+

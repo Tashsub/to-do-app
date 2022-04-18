@@ -1,6 +1,6 @@
 @use "./variables" as v;
 
-.center-vertically  {
+.center-contents {
 	vertical-align: middle;
 	line-height: v.$heightOfTask;
 }
@@ -24,26 +24,30 @@
 	height: v.$heightOfTask;
 	width: 100%;
 	border-radius: 5px;
-	border: #414d56;
-	border-style: solid;
+}
+
+.grow {
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+        transform: scale(1.008);
+    }
 }
 
 .checkbox-div {
-	border-style: solid;
 	width: 100px;
+	@extend .center-contents;
 }
 
 .task-description-div {
-	padding-left: 1cm;
 	text-align: left;
-	border-style: solid;
 	width: 90%;
-    @extend .center-vertically; 
+    line-height: 1cm;
 }
 
 .star-div {
-	border-style: dashed;
-	text-align: right;
+	display: inline-block;
+
 	width: 10%;
-    @extend .center-vertically; 
+	@extend .center-contents;
 }
