@@ -23,7 +23,7 @@ export default function StarCheckBox({priority}) {
 			<input type="checkbox" onChange={changeHandler} defaultChecked={priority}/>
 
 			<div class="state p-off">
-				<FontAwesomeIcon icon={faRegularStar} size={iconSize} />
+				<FontAwesomeIcon icon={faRegularStar} size={iconSize} strokeWidth={'10px'} />
 			</div>
 
 			<div class="state p-on p-warning-o">

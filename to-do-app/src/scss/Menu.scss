@@ -1,0 +1,26 @@
+@import "./Animations.scss"; 
+
+$borderRadius: 3px; 
+
+.menu-div{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top:3.2cm;
+    left: -5cm;
+    height: auto;
+    width: 3cm;
+    border-radius: $borderRadius;
+}
+
+.menu-button{
+    width: 90%;
+    height: 2.5cm;
+    border: 0.5px;
+    border-style: solid;
+    border-color: #848484;
+    border-radius: $borderRadius;
+    background-color: rgb(255, 255, 255);
+    font-size: 30px;
+    @include animateGrowOnHover($animateTask: false); 
+}

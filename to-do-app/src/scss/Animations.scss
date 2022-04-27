@@ -1,0 +1,34 @@
+$trans: all 0.1s ease-in-out;
+
+
+$scaleGrowthTask: scale(1.007);
+$scaleGrowthMenuButton: scale(1.05);
+
+@mixin contentComingInAimation {
+	@keyframes easeInToPage {
+		from {
+			top: -150px;
+		}
+		to {
+			top: 120px;
+		}
+	}
+
+	animation: easeInToPage 1.5s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+}
+
+@mixin animateGrowOnHover($animateTask: false) {
+	transition: $trans;
+	@if $animateTask == true {
+		&:hover {
+			transform: $scaleGrowthTask;
+		}
+	} @else{
+		&:hover {
+			transform: $scaleGrowthMenuButton;
+		}
+	}
+	
+}

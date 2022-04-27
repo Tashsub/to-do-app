@@ -1,5 +1,7 @@
 @use "./variables" as v;
 
+@import "./Animations.scss"; 
+
 .center-contents {
 	vertical-align: middle;
 	line-height: v.$heightOfTask;
@@ -24,14 +26,7 @@
 	height: v.$heightOfTask;
 	width: 100%;
 	border-radius: 5px;
-}
-
-.grow {
-    transition: all 0.1s ease-in-out;
-
-    &:hover {
-        transform: scale(1.008);
-    }
+	@include animateGrowOnHover($animateTask: true);  
 }
 
 .checkbox-div {

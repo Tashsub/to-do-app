@@ -1,7 +1,7 @@
-.main-div{
-  display: flex;
-  flex-direction: row;
-  place-content: center;
+.main-div {
+	display: flex;
+	flex-direction: row;
+	place-content: center;
 }
 
 .bg-div {
@@ -16,8 +16,8 @@
 }
 
 .content-div {
-  text-align: center;
-  place-content: center;
+	text-align: center;
+	place-content: center;
 	position: relative;
 	border: 2px;
 	z-index: 2;

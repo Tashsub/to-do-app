@@ -4,7 +4,7 @@ import "../../scss/Inputs.scss"
 export default function TickCheckBox({completed}) {
     const styling= {
         fontSize:"0.5cm", 
-        margin: "0cm"
+        margin: "0cm",
     }
 
 	return (
