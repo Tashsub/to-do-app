@@ -1,0 +1,35 @@
+@import "./CenterItems.scss";
+
+$buttonRadius: 100cm;
+$buttonHeight: 120px;
+
+$primaryColour:  #566672; 
+$secondaryColour:  #768997; 
+
+.button {
+	&-circle {
+		height: 100%;
+		width: 100%;
+		border-radius: $buttonRadius;
+		font-size: 50px;
+		background-color: transparent;
+		border-color: transparent;
+	}
+}
+
+.test-div {
+	font-size: 30px;
+	position: absolute;
+	bottom: -1.5cm;
+	right: -1cm;
+	height: $buttonHeight;
+	width: $buttonHeight;
+    border: $secondaryColour; 
+    border-style: solid;
+	background-color: $primaryColour;
+	border-radius: $buttonRadius;
+	@include centerItemsInDiv;
+	&:hover {
+		background-color: $secondaryColour;
+	}
+}
