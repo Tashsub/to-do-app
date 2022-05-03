@@ -17,7 +17,7 @@ $secondaryColour:  #768997;
 	}
 }
 
-.test-div {
+.circleButton-div {
 	font-size: 30px;
 	position: absolute;
 	bottom: -1.5cm;
@@ -33,3 +33,15 @@ $secondaryColour:  #768997;
 		background-color: $secondaryColour;
 	}
 }
+
+
+.close-button{
+   float: right; 
+   margin-right: 0.5cm;
+   background-color: transparent;
+   border: none; 
+   &:hover{
+       color: $primaryColour;
+   }
+}
+
