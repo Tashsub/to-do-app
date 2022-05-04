@@ -5,14 +5,8 @@ $secondaryColour: #768997;
 
 .modal {
     position: relative;
-	background-color: darkorange;
-	background-image: linear-gradient(
-		130deg,
-		#ff7a18,
-		#af002d 41.07%,
-		#319197 76.05%
-	);
-	opacity: 0.8;
+	background-color:  rgba(124, 113, 113, 0.7);
+	//background: linear-gradient(to right, rgba(169,208,113,0.4),rgba(136,173,215,1));
 	height: 100vh;
 	width: 100vw;
 	position: absolute;
@@ -30,32 +24,32 @@ $secondaryColour: #768997;
 }
 
 .content-wrapper {
-	opacity: 1;
 	width: 50%;
 	height: 50%;
 	background: white;
 	border: grey;
-	border-width: 1px;
+	// border-width: 3px;
 	border-style: solid;
 	border-radius: 10px;
 }
 
 .add-content {
-	border: rgb(197, 21, 21);
+	border: rgb(163, 24, 24);
 	border: solid;
-	height: 78%;
+	// border-width: 4px;
+	height: 75%;
 }
 
 .modal-buttons-div {
-	border: rgb(58, 68, 3);
-	border: solid;
-	height: 1.8cm;
+	// border: rgb(58, 68, 3);
+	// border: solid;
+	height: 1.4cm;
 	width: auto;
 	@include centerItemsInDiv;
 }
 
 .modal-button {
-	font-size: 27px;
+	font-size: 20px;
 	margin: 10px;
 	width: 4cm;
 	color: white;
@@ -68,9 +62,15 @@ $secondaryColour: #768997;
 .button-cancel{
     background-color: #f63849;
     @extend .modal-button; 
+	&:hover{
+		background-color: #e90b1e;
+	}
 }
 
 .button-add{
     background-color: #18922c;
     @extend .modal-button; 
+	&:hover{
+		background-color:#137624;
+	}
 }

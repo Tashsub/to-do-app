@@ -5,13 +5,19 @@ import "../scss/Buttons.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import ModalContext from "../Context/ModalContext";
+import AddTask from "./Forms/AddTask";
 
-export default function Modal({ contents }) {
+export default function Modal() {
+
     const closeButtonHandler=()=>{
         closeModal();
     }
+
 	const closeIcon = <FontAwesomeIcon icon={faCircleXmark} size={"2xl"} />;
 	const { closeModal } = useContext(ModalContext);
+
+	const contents = <AddTask/>
+
 	return ReactDOM.createPortal(
        
 		<div className="modal">
