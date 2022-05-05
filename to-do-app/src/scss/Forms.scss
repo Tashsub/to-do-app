@@ -1,52 +1,71 @@
 @use "./variables" as v;
 @import "./CenterItems.scss";
 
-$paddingVal: 10px; 
+$paddingVal: 10px;
 
-$borderCol: #757676; 
+$borderCol: #757676;
 
 .form {
 	margin-top: 10px;
 	font-size: 25px;
-    width: 100%;
+	width: 100%;
 }
 .input-text-div {
-    margin-bottom: 1cm;
-    width: 100%;
-    @include centerItemsInDiv;
+	margin-bottom: 1cm;
+	width: 100%;
+	@include centerItemsInDiv;
 }
 
 .input-field {
-    padding-left: 14px;
-    font-size: 22px;
-    width: 90%;
-    border-style: solid;
-    font-family: v.$defaultFontFamily;
+	padding-left: 14px;
+	font-size: 22px;
+	width: 90%;
+	//border-style: solid;
+	font-family: v.$defaultFontFamily;
+}
+
+.input-field-one-line {
+	@extend .input-field;
+	color: $borderCol;
+	height: 1cm;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	outline: none;
+	border-color: $borderCol;
+}
+
+.input-field-multi-line {
+	@extend .input-field;
+	padding-top: 10px;
+	color: $borderCol;
+	resize: none;
+	border: solid;
+	border-color: $borderCol;
+	height: 3cm;
+}
+
+.input-field-check-box-div {
+	@extend .input-field;
+	padding-left: 0;
+	margin-left: 0.8cm;
+}
+
+.radio-button {
+    margin-bottom: 10px;
+    border: 1px solid #fff;
+    padding: 0.5em;
+    height: 15px;
+    width: 15px;
+}
+
+.outline-checkbox{
+    // @include centerItemsInDiv; 
     
-}
-
-.input-field-one-line{
-    @extend .input-field; 
-    color: $borderCol;
-    height: 1cm;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    outline: none;
-    border-color:$borderCol;
-}
-
-.input-field-multi-line{
-    @extend .input-field;
-    padding-top: 10px;
-    color: $borderCol;
- 
+    padding-left: 0.1cm;
+    padding-right: 0.1cm;
     border: solid;
-    border-color:$borderCol; 
-    height: 3cm;
-}
-
-.input-field-check-box{
-    @extend .input-field;
-    border: solid;
+    width: 0.6cm;
+    height: 0.6cm; 
+    border-radius: 3px;
 }
