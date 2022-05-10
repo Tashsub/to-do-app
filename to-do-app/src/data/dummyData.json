@@ -1,41 +1,37 @@
-[{
-    "id": 1,
-    "description": "Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
-    "completed": true,
-    "priority": false
-  }, {
-    "id": 2,
-    "description": "Fusce consequat.",
-    "completed": true,
-    "priority": true
-  }, {
-    "id": 3,
-    "description": "Curabitur gravida nisi at nibh.",
-    "completed": true,
-    "priority": true
-  }, {
-    "id": 4,
-    "description": "Duis bibendum.",
-    "completed": true,
-    "priority": true
-  }, {
-    "id": 5,
-    "description": "Suspendisse potenti.",
-    "completed": false,
-    "priority": true
-  }, {
-    "id": 6,
-    "description": "Etiam faucibus cursus urna.",
-    "completed": false,
-    "priority": false
-  }, {
-    "id": 7,
-    "description": "Nulla tellus.",
-    "completed": false,
-    "priority": false
-  }, {
-    "id": 8,
-    "description": "Nulla ac enim.",
-    "completed": false,
-    "priority": true
-  }]
+[
+	{
+		"id": 1,
+		"title": "Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+		"description": "test description",
+		"completed": true,
+		"priority": false
+	},
+	{
+		"id": 2,
+		"title": "Fusce consequat.",
+		"description": "test description",
+		"completed": true,
+		"priority": true
+	},
+	{
+		"id": 3,
+		"title": "Curabitur gravida nisi at nibh.",
+		"description": "test description",
+		"completed": true,
+		"priority": true
+	},
+	{
+		"id": 4,
+		"title": "Duis bibendum.",
+		"description": "test description",
+		"completed": false,
+		"priority": false
+	},
+	{
+		"id": 5,
+		"title": "Suspendisse potenti.",
+		"description": "test description",
+		"completed": false,
+		"priority": true
+	}
+]

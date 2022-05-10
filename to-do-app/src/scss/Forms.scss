@@ -5,23 +5,58 @@ $paddingVal: 10px;
 
 $borderCol: #757676;
 
-.form {
-	margin-top: 10px;
-	font-size: 25px;
-	width: 100%;
+p,
+input,
+.change-font,
+label,
+textarea {
+	font-family: v.$defaultFontFamily;
+	font-size: 22px;
+	color: $borderCol;
 }
-.input-text-div {
+
+.default-form {
+	overflow: hidden;
+	font-size: 25px;
+}
+@mixin FormVal($mt, $w) {
+	margin-top: $mt;
+	width: $w;
+	
+}
+
+.form {
+	@extend .default-form;
+	// @include FormVal(10px, 100%);
+	margin-bottom: 0;
+}
+
+.form-half-width {
+	@extend .default-form;
+	// @include FormVal(60px, 100%);
+}
+
+.default-div {
+	display: flex;
+	flex-direction: column;
 	margin-bottom: 1cm;
 	width: 100%;
+}
+
+.default-div-center {
+	@extend .default-div;
 	@include centerItemsInDiv;
+}
+
+.default-div-margin-left {
+	@extend .default-div;
+	margin-left: 40px;
 }
 
 .input-field {
 	padding-left: 14px;
 	font-size: 22px;
 	width: 90%;
-	//border-style: solid;
-	font-family: v.$defaultFontFamily;
 }
 
 .input-field-one-line {
@@ -40,32 +75,36 @@ $borderCol: #757676;
 	padding-top: 10px;
 	color: $borderCol;
 	resize: none;
-	border: solid;
 	border-color: $borderCol;
 	height: 3cm;
 }
 
-.input-field-check-box-div {
-	@extend .input-field;
-	padding-left: 0;
-	margin-left: 0.8cm;
-}
-
 .radio-button {
-    margin-bottom: 10px;
-    border: 1px solid #fff;
-    padding: 0.5em;
-    height: 15px;
-    width: 15px;
+	margin-bottom: 10px;
+	padding: 0.5em;
+	height: 18px;
+	width: 18px;
 }
 
-.outline-checkbox{
-    // @include centerItemsInDiv; 
-    
-    padding-left: 0.1cm;
-    padding-right: 0.1cm;
-    border: solid;
-    width: 0.6cm;
-    height: 0.6cm; 
-    border-radius: 3px;
+.form-buttons-div-default {
+	height: 1.4cm;
+	width: auto;
+	@include centerItemsInDiv;
+}
+
+.form-buttons-div {
+	@extend .form-buttons-div-default;
+	margin-top: 2cm;
+}
+
+.form-buttons-div-v2 {
+	@extend .form-buttons-div-default;
+	margin-top: 1cm;
+}
+
+.delete-item-button-div{
+	display: flex;
+	flex-direction: column;
+	@include centerItemsInDiv; 
+	margin-bottom: 0.5cm;
 }

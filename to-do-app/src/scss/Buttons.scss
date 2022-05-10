@@ -3,8 +3,8 @@
 $buttonRadius: 100cm;
 $buttonHeight: 120px;
 
-$primaryColour:  #566672; 
-$secondaryColour:  #768997; 
+$primaryColour: #566672;
+$secondaryColour: #768997;
 
 .button {
 	&-circle {
@@ -24,8 +24,8 @@ $secondaryColour:  #768997;
 	right: -1cm;
 	height: $buttonHeight;
 	width: $buttonHeight;
-    border: $secondaryColour; 
-    border-style: solid;
+	border: $secondaryColour;
+	border-style: solid;
 	background-color: $primaryColour;
 	border-radius: $buttonRadius;
 	@include centerItemsInDiv;
@@ -34,14 +34,26 @@ $secondaryColour:  #768997;
 	}
 }
 
-
-.close-button{
-   float: right; 
-   margin-right: 0.5cm;
-   background-color: transparent;
-   border: none; 
-   &:hover{
-       color: $primaryColour;
-   }
+.close-button {
+	float: right;
+	margin-right: 0.5cm;
+	background-color: transparent;
+	border: none;
+	&:hover {
+		color: $primaryColour;
+	}
 }
 
+.reg-btn {
+	color: #757676;
+	border: none;
+	background-color: white;
+	&:hover {
+		color: #f63849;
+	}
+}
+
+.reg-btn-v2 {
+	@extend .reg-btn;
+	font-size: 30px;
+}

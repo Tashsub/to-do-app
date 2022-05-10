@@ -5,14 +5,14 @@ import StarCheckBox from "./Inputs/StarCheckBox";
 import TickCheckBox from "./Inputs/TickCheckBox";
 import "../scss/Animations.scss"; 
 
-export default function Task({completed, description, priority}) {
+export default function Task({completed, title, priority}) {
 	return (
 		<div className="single-task">
 			<div className="checkbox-div">
 				<TickCheckBox completed={completed} />
 			</div>
 			<div className="task-description-div">
-				<p>{description}</p>
+				<p>{title}</p>
 			</div>
 			<div className="star-div">
 				<StarCheckBox priority={priority}/>

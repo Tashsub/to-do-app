@@ -1,16 +1,18 @@
-import React from "react";
+import React, {useContext} from "react";
 import Task from "./Task";
 import "../scss/Task.scss";
-import dummyData from "../data/dummyData.json";
+import TaskContext from "../Context/TaskContext";
 
 export default function Tasks() {
+	const {tasks} = useContext(TaskContext); 
+	
 	return (
 		<div className="all-tasks">
-			{dummyData.map((task) => (
+			{tasks.map((task) => (
 				<Task
 					key={task.id}
 					completed={task.completed}
-					description={task.description}
+					title={task.title}
 					priority={task.priority}
 				/>
 			))}

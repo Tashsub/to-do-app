@@ -10,7 +10,7 @@ export default function MainContainer() {
 	const { openModal } = useContext(ModalContext);
 
 	const buttonHandler = () => {
-		console.log("clicked")
+		console.log("clicked");
 		openModal();
 	};
 
@@ -20,12 +20,7 @@ export default function MainContainer() {
 			<h1 className="container-title">Tasks</h1>
 			<Tasks />
 			<div className="circleButton-div">
-				<button
-					onClick={() => {
-						buttonHandler();
-					}}
-					className="button-circle"
-				>
+				<button onClick={buttonHandler} className="button-circle">
 					{icon}
 				</button>
 			</div>

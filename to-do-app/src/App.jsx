@@ -4,7 +4,7 @@ import Menu from "./Components/Menu";
 function App() {
 	return (
 		<Background>
-			<Menu/>
+			<Menu />
 			<MainContainer />
 		</Background>
 	);

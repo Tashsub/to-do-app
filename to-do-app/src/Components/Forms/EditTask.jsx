@@ -1,9 +1,12 @@
 import React, { useContext, useState } from "react";
 import ModalContext from "../../Context/ModalContext";
-import "../../scss/Forms.scss";
 import TaskContext from "../../Context/TaskContext";
+import "../../scss/Forms.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import "../../scss/buttons.scss"
 
-function AddTask() {
+function EditTask({}) {
 	const { closeModal } = useContext(ModalContext);
 	const { addTask } = useContext(TaskContext);
 
@@ -33,19 +36,24 @@ function AddTask() {
 		//make api call
 		//if response is good add task using context method
 		addTask(title, description, priority);
-        closeModal();
+		closeModal();
 	};
 
 	const closeButtonHandler = () => {
 		closeModal();
 	};
 
+    const trashIcon = <FontAwesomeIcon icon={faTrashCan} strokeWidth={'10px'}/>
+
 	return (
-		<form className="form" onSubmit={submitHandler}>
+		<form className="form-half-width" onSubmit={submitHandler}>
+			<div className="delete-item-button-div">
+				<button className="reg-btn-v2">{trashIcon}</button>
+                <button className="reg-btn">Delete this task</button>
+			</div>
 			<div className="default-div-center">
 				<input
 					type="text"
-					placeholder="ie: make a reservation at Pizza Express"
 					className="input-field-one-line"
 					onChange={(e) => {
 						getTitle(e.target.value);
@@ -56,7 +64,6 @@ function AddTask() {
 				{/* <label htmlFor="task-name">Task</label> */}
 				<textarea
 					type="text"
-					placeholder="ie: ask whether the booking deposit is refundable..."
 					className="input-field-multi-line"
 					onChange={(e) => {
 						getDescription(e.target.value);
@@ -64,9 +71,8 @@ function AddTask() {
 				></textarea>
 			</div>
 			<div className="default-div-margin-left">
-				<p className=".change-font">
-					Would you like to make this task a priority?
-				</p>
+				<p className=".change-font">Task Priority:</p>
+
 				<div>
 					<input
 						className="radio-button"
@@ -79,7 +85,7 @@ function AddTask() {
 							getPriority(e.target.value);
 						}}
 					/>
-					<label htmlFor="no">No</label>
+					<label htmlFor="no">Not Important</label>
 				</div>
 				<div>
 					<input
@@ -92,19 +98,19 @@ function AddTask() {
 							getPriority(e.target.value);
 						}}
 					/>
-					<label htmlFor="yes">Yes</label>
+					<label htmlFor="yes">Important</label>
 				</div>
 			</div>
-			<div className="form-buttons-div">
+			<div className="form-buttons-div-v2">
 				<button onClick={closeButtonHandler} className="button-cancel">
 					Close
 				</button>
 				<button onClick={submitHandler} className="button-add">
-					Add
+					Update
 				</button>
 			</div>
 		</form>
 	);
 }
 
-export default AddTask;
+export default EditTask;
