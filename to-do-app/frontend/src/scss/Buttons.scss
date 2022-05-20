@@ -1,0 +1,62 @@
+@import "./CenterItems.scss";
+
+$buttonRadius: 100cm;
+$buttonHeight: 120px;
+
+$primaryColour: #566672;
+$secondaryColour: #768997;
+
+.button {
+	&-circle {
+		position: absolute;
+		bottom: -1cm;
+		right: -1cm;
+		width: 3cm;
+		height: 3cm;
+		border-radius: $buttonRadius;
+		font-size: 50px;
+		background-color: $primaryColour;
+		border-color: transparent;
+		border-style: solid;
+		border-width: 1px;
+		&:hover {
+			background-color: $secondaryColour;
+		}
+	}
+	&-edit{
+		font-size: medium;
+		width: 120px; 
+		margin-top: 12px;
+		border: none; 
+		border-radius: 3px;
+		color: white;
+		background-color:  #18922c;
+		height: 40px;
+		vertical-align: middle;
+	}
+}
+
+.close-button {
+	float: right;
+	margin-right: 0.5cm;
+	background-color: transparent;
+	border: none;
+	&:hover {
+		color: $primaryColour;
+	}
+}
+
+.reg-btn {
+	color: #757676;
+	border: none;
+	background-color: white;
+	&:hover {
+		color: #f63849;
+	}
+	font-size: 18px;
+}
+
+.reg-btn-v2 {
+	@extend .reg-btn;
+	font-size: 33px;
+}
