@@ -4,14 +4,16 @@ import App from "./App";
 import "./main.scss";
 import { ModalContextProvider } from "./Context/ModalContext";
 import { TaskContextProvider } from "./Context/TaskContext";
-
+import { LoginContextProvider } from "./Context/LoginContext";
 ReactDOM.render(
 	<React.StrictMode>
-		<ModalContextProvider>
+		<LoginContextProvider>
 			<TaskContextProvider>
-				<App />
+				<ModalContextProvider>
+					<App />
+				</ModalContextProvider>
 			</TaskContextProvider>
-		</ModalContextProvider>
+		</LoginContextProvider>
 	</React.StrictMode>,
 	document.getElementById("root")
 );

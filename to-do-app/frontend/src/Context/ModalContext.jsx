@@ -3,7 +3,7 @@ import Modal from "../Components/Modal";
 
 const ModalContext = createContext({
 	modal: false,
-	addContent: (content)=>{},
+	addContent: (content) => {},
 	openModal: () => {},
 	closeModal: () => {},
 });
@@ -30,10 +30,10 @@ export const ModalContextProvider = ({ children }) => {
 				modal: modal,
 				openModal: openModalHandler,
 				closeModal: closeModalHandler,
-				addContent: addModalContentHandler
+				addContent: addModalContentHandler,
 			}}
 		>
-			{modal && <Modal content={content}/>}
+			{modal && <Modal content={content} />}
 			{children}
 		</ModalContext.Provider>
 	);

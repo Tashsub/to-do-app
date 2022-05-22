@@ -6,35 +6,31 @@ const TaskContext = createContext({
 	tasks: [],
 	addTask: (title, description, priority) => {},
 	removeTask: (taskId) => {},
+	updateTasks: (taskId) => {},
 });
 
 export const TaskContextProvider = ({ children }) => {
 	const [tasks, setTasks] = useState([]);
 
 	useEffect(() => {
-		api.get("/getTasks").then((response) => {
+		api.get("tasks").then((response) => {
 			setTasks(response.data);
 		});
-	}, []);
+	}, [tasks]);
 
-	const addTaskHandler = (title, description, priority) => {
-		const completed = false;
-
-		const taskToAdd = {
-			id: nanoid(4),
-			title,
-			description,
-			completed,
-			priority,
-		};
-
+	const addTaskHandler = (task) => {
+		console.log(task);
 		setTasks((previousState) => {
-			return [taskToAdd, ...previousState];
+			return [task, ...previousState];
 		});
 	};
 
+	const updateTaskHandler = (updatedTasks) => {
+		setTasks(updatedTasks)
+	};
+
 	return (
-		<TaskContext.Provider value={{ tasks: tasks, addTask: addTaskHandler }}>
+		<TaskContext.Provider value={{ tasks: tasks, addTask: addTaskHandler, updateTasks: updateTaskHandler }}>
 			{children}
 		</TaskContext.Provider>
 	);

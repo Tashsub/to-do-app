@@ -10,8 +10,8 @@ export default function Tasks({ toggleModal }) {
 		<div className="all-tasks">
 			{tasks.map((task) => (
 				<Task
-					key={task.id}
-					taskId={task.id}
+					key={task.task_id}
+					taskId={task.task_id}
 					completed={task.completed}
 					title={task.title}
 					priority={task.priority}

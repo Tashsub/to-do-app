@@ -2,11 +2,14 @@ import React, { useContext, useState } from "react";
 import ModalContext from "../../Context/ModalContext";
 import "../../scss/Forms.scss";
 import TaskContext from "../../Context/TaskContext";
+import LoginContext from "../../Context/LoginContext";
 import { api } from "../../api";
+import { nanoid } from "nanoid";
 
 function AddTask() {
 	const { closeModal } = useContext(ModalContext);
-	const { addTask } = useContext(TaskContext);
+	const { addTask, updateTasks } = useContext(TaskContext);
+	const { user_id } = useContext(LoginContext);
 
 	const [title, setTitle] = useState("");
 	const [description, setDescription] = useState("");
@@ -22,7 +25,6 @@ function AddTask() {
 
 	const getPriority = (value) => {
 		if (value === "1") {
-			console.log("wooo");
 			setPriority(true);
 		} else {
 			setPriority(false);
@@ -31,9 +33,19 @@ function AddTask() {
 
 	const submitHandler = (e) => {
 		e.preventDefault();
-		//make api call
-		//if response is good add task using context method
-		addTask(title, description, priority);
+
+		//completed will default to false in the backend
+		const task = {
+			user_id,
+			task_id: nanoid(12),
+			title,
+			description,
+			priority,
+		};
+
+		api.post("tasks", task).then((result) => {
+			addTask(result.data);
+		});
 		closeModal();
 	};
 
