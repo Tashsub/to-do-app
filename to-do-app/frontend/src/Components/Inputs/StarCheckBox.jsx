@@ -6,6 +6,7 @@ import "../../scss/Inputs.scss";
 
 export default function StarCheckBox({priority}) {
 	const iconSize = 'xl';
+	
 	let check = true;
 
 	const changeHandler = () => {

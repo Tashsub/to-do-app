@@ -1,24 +1,25 @@
 const mongoose = require("mongoose");
 
 const TaskSchema = new mongoose.Schema({
-    user_id:{
-        type: String, 
-        required: true, 
-    },
+	user_id: {
+		type: String,
+		required: true,
+		immutable: false,
+	},
 	title: {
 		type: String,
 		required: true,
 	},
 	description: {
 		type: String,
-		required: true,
 	},
 	completed: {
 		type: Boolean,
+		default: false,
 	},
 	priority: {
 		type: Boolean,
-	}
+	},
 });
 
 //1st param of model name of the collection, where to store it

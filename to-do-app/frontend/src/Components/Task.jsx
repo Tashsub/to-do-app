@@ -13,12 +13,23 @@ export default function Task({
 	title,
 	priority,
 	toggleModal,
+	description,
 }) {
 	const { addContent, openModal } = useContext(ModalContext);
+
 	const [showEdit, setShowEdit] = useState(false);
 
 	const editButtonHandler = () => {
-		toggleModal(true, <EditTask />);
+		toggleModal(
+			true,
+			<EditTask
+				taskId={taskId}
+				taskTitle={title}
+				taskDescription={description}
+				taskPriority={priority}
+				completed={completed}
+			/>
+		);
 	};
 
 	return (

@@ -4,15 +4,24 @@ import TaskContext from "../../Context/TaskContext";
 import "../../scss/Forms.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
-import "../../scss/buttons.scss"
+import "../../scss/buttons.scss";
+import { api } from "../../api";
+import LoginContext from "../../Context/LoginContext";
 
-function EditTask({}) {
+function EditTask({
+	taskId,
+	taskTitle,
+	taskDescription,
+	taskPriority,
+	completed,
+}) {
 	const { closeModal } = useContext(ModalContext);
 	const { addTask } = useContext(TaskContext);
+	const { user_id } = useContext(LoginContext);
 
-	const [title, setTitle] = useState("");
-	const [description, setDescription] = useState("");
-	const [priority, setPriority] = useState(false);
+	const [title, setTitle] = useState(taskTitle);
+	const [description, setDescription] = useState(taskDescription);
+	const [priority, setPriority] = useState(taskPriority);
 
 	const getTitle = (text) => {
 		setTitle(text);
@@ -24,7 +33,6 @@ function EditTask({}) {
 
 	const getPriority = (value) => {
 		if (value === "1") {
-			console.log("wooo");
 			setPriority(true);
 		} else {
 			setPriority(false);
@@ -33,9 +41,25 @@ function EditTask({}) {
 
 	const submitHandler = (e) => {
 		e.preventDefault();
-		//make api call
-		//if response is good add task using context method
-		addTask(title, description, priority);
+
+		const task = {
+			user_id,
+			title,
+			description,
+			priority,
+		};
+
+		const url = "tasks/" + taskId;
+
+		api
+			.put(url, task)
+			.then((response) => {
+				console.log(response);
+			})
+			.catch((error) => {
+				console.log("can not update because of " + error);
+			});
+
 		closeModal();
 	};
 
@@ -43,19 +67,21 @@ function EditTask({}) {
 		closeModal();
 	};
 
-    const trashIcon = <FontAwesomeIcon icon={faTrashCan} strokeWidth={'10px'}/>
+	const trashIcon = <FontAwesomeIcon icon={faTrashCan} strokeWidth={"10px"} />;
 
 	return (
 		<form className="form-half-width" onSubmit={submitHandler}>
 			<div className="delete-item-button-div">
 				<button className="reg-btn-v2">{trashIcon}</button>
-                <button className="reg-btn">Delete this task</button>
+				<button className="reg-btn">Delete this task</button>
 			</div>
 			<div className="default-div-center">
 				<input
+					defaultValue={title}
 					type="text"
 					className="input-field-one-line"
 					onChange={(e) => {
+						console.log("weee");
 						getTitle(e.target.value);
 					}}
 				></input>
@@ -68,7 +94,9 @@ function EditTask({}) {
 					onChange={(e) => {
 						getDescription(e.target.value);
 					}}
-				></textarea>
+				>
+					{description}
+				</textarea>
 			</div>
 			<div className="default-div-margin-left">
 				<p className=".change-font">Task Priority:</p>
