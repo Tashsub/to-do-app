@@ -15,14 +15,15 @@ export default function MainContainer() {
 		openModal();
 	};
 
-	const toggleModalOnTask=(toggleModal, modalContent)=>{
-		if(toggleModal === true){
-			addContent(modalContent); 
-			openModal(); 
+	const toggleModalOnTask = (toggleModal, modalContent) => {
+		if (toggleModal === true) {
+			addContent(modalContent);
+			openModal();
 		}
-	}
+	};
 
 	const icon = <FontAwesomeIcon icon={faPlus} color={"white"} />;
+
 	return (
 		<div className="container-main">
 			<h1 className="container-title">Tasks</h1>

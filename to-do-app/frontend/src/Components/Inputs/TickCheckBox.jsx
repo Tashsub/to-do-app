@@ -1,16 +1,47 @@
-import React from "react";
+import React, {useState} from "react";
 import "../../scss/Inputs.scss";
+import { api } from "../../api";
 
-export default function TickCheckBox({ completed }) {
+export default function TickCheckBox({ completed, taskId }) {
+
+	const [completedTask, setCompletedTask] = useState(completed)
+
 	const styling = {
 		fontSize: "0.5cm",
 		margin: "0cm",
 		paddingLeft: "0cm",
 	};
 
+	const endpointWithId = "tasks/" + taskId;
+
+	function changeCompletedStatus(comp) {
+		const task = {
+			completed: comp,
+		};
+
+		api
+			.put(endpointWithId, task)
+			.then((response) => {
+				console.log(response);
+			})
+			.catch((error) => {
+				console.log("could not update commpleted status: " + error.message);
+			});
+	}
+
+	const changeHandler = () => {
+		if (completedTask === true) {
+			setCompletedTask(false);
+			changeCompletedStatus(false);
+		} else if (completedTask === false) {
+			setCompletedTask(true);
+			changeCompletedStatus(true);
+		}
+	};
+
 	return (
 		<div className="pretty p-curve p-icon p-smooth p-bigger" style={styling}>
-			<input type="checkbox" defaultChecked={completed} />
+			<input type="checkbox" defaultChecked={completed} onChange={changeHandler} />
 			<div className="state p-success">
 				<i
 					className="icon fa fa-check"

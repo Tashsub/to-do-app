@@ -16,3 +16,4 @@ Useful resources
 
 (Types in MongoDb)[https://kb.objectrocket.com/mongo-db/mongoose-schema-types-1418]
 (refs in mongodb)[https://www.youtube.com/watch?v=7xYMulfv-PU&ab_channel=MicroUrb]
+(Toast Messages)[https://jossmac.github.io/react-toast-notifications/]

@@ -22,7 +22,6 @@ textarea {
 @mixin FormVal($mt, $w) {
 	margin-top: $mt;
 	width: $w;
-	
 }
 
 .form {
@@ -87,6 +86,7 @@ textarea {
 }
 
 .form-buttons-div-default {
+	border: 1px solid black;
 	height: 1.4cm;
 	width: auto;
 	@include centerItemsInDiv;
@@ -94,7 +94,7 @@ textarea {
 
 .form-buttons-div {
 	@extend .form-buttons-div-default;
-	margin-top: 2cm;
+
 }
 
 .form-buttons-div-v2 {
@@ -102,9 +102,9 @@ textarea {
 	margin-top: 1cm;
 }
 
-.delete-item-button-div{
+.delete-item-button-div {
 	display: flex;
 	flex-direction: column;
-	@include centerItemsInDiv; 
+	@include centerItemsInDiv;
 	margin-bottom: 0.5cm;
 }

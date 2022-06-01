@@ -8,20 +8,15 @@ import "../../scss/buttons.scss";
 import { api } from "../../api";
 import LoginContext from "../../Context/LoginContext";
 
-function EditTask({
-	taskId,
-	taskTitle,
-	taskDescription,
-	taskPriority,
-	completed,
-}) {
+function EditTask({ taskId, taskTitle, taskDescription, taskPriority }) {
 	const { closeModal } = useContext(ModalContext);
-	const { addTask } = useContext(TaskContext);
 	const { user_id } = useContext(LoginContext);
 
 	const [title, setTitle] = useState(taskTitle);
 	const [description, setDescription] = useState(taskDescription);
 	const [priority, setPriority] = useState(taskPriority);
+
+	const endpointWithId = "tasks/" + taskId;
 
 	const getTitle = (text) => {
 		setTitle(text);
@@ -49,10 +44,8 @@ function EditTask({
 			priority,
 		};
 
-		const url = "tasks/" + taskId;
-
 		api
-			.put(url, task)
+			.put(endpointWithId, task)
 			.then((response) => {
 				console.log(response);
 			})
@@ -61,6 +54,20 @@ function EditTask({
 			});
 
 		closeModal();
+	};
+
+	const deleteTaskHandler = (e) => {
+		e.preventDefault();
+
+		api
+			.delete(endpointWithId)
+			.then((response) => {
+				console.log(response);
+				closeModal();
+			})
+			.catch((error) => {
+				console.log("Can not delete this task because of " + error);
+			});
 	};
 
 	const closeButtonHandler = () => {
@@ -72,8 +79,12 @@ function EditTask({
 	return (
 		<form className="form-half-width" onSubmit={submitHandler}>
 			<div className="delete-item-button-div">
-				<button className="reg-btn-v2">{trashIcon}</button>
-				<button className="reg-btn">Delete this task</button>
+				<button onClick={deleteTaskHandler} className="reg-btn-v2">
+					{trashIcon}{" "}
+				</button>
+				<button onClick={deleteTaskHandler} className="reg-btn">
+					Delete this task
+				</button>
 			</div>
 			<div className="default-div-center">
 				<input
@@ -81,7 +92,6 @@ function EditTask({
 					type="text"
 					className="input-field-one-line"
 					onChange={(e) => {
-						console.log("weee");
 						getTitle(e.target.value);
 					}}
 				></input>

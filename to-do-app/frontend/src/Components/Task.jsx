@@ -43,7 +43,7 @@ export default function Task({
 			className="single-task"
 		>
 			<div className="checkbox-div">
-				<TickCheckBox completed={completed} />
+				<TickCheckBox completed={completed} taskId={taskId} />
 			</div>
 			<div className="title-and-button-div">
 				<div className="task-description-div">
@@ -56,7 +56,7 @@ export default function Task({
 				)}
 			</div>
 			<div className="star-div">
-				<StarCheckBox priority={priority} />
+				<StarCheckBox priority={priority} taskId={taskId} />
 			</div>
 		</div>
 	);

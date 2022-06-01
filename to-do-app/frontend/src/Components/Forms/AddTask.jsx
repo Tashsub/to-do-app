@@ -8,7 +8,7 @@ import { nanoid } from "nanoid";
 
 function AddTask() {
 	const { closeModal } = useContext(ModalContext);
-	const { addTask, updateTasks } = useContext(TaskContext);
+	const { addTask } = useContext(TaskContext);
 	const { user_id } = useContext(LoginContext);
 
 	const [title, setTitle] = useState("");
@@ -34,7 +34,7 @@ function AddTask() {
 	const submitHandler = (e) => {
 		e.preventDefault();
 
-		//completed will default to false in the backend
+		//note - completed will default to false in the backend
 		const task = {
 			user_id,
 			task_id: nanoid(12),
@@ -55,7 +55,7 @@ function AddTask() {
 	};
 
 	return (
-		<form className="form" onSubmit={submitHandler}>
+		<form className="form" onSubmit={submitHandler} >
 			<div className="default-div-center">
 				<input
 					type="text"
@@ -64,6 +64,7 @@ function AddTask() {
 					onChange={(e) => {
 						getTitle(e.target.value);
 					}}
+					required
 				></input>
 			</div>
 			<div className="default-div-center">
@@ -113,7 +114,7 @@ function AddTask() {
 				<button onClick={closeButtonHandler} className="button-cancel">
 					Close
 				</button>
-				<button onClick={submitHandler} className="button-add">
+				<button type="submit" className="button-add">
 					Add
 				</button>
 			</div>
