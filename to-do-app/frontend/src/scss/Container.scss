@@ -1,7 +1,8 @@
-@use "./variables" as v; 
+@use "./variables" as v;
 
-@import "./Animations.scss"; 
+@import "./Animations.scss";
 
+// the container height, where the tasks go needs to be the same height all-tasks div
 
 .container {
 	padding-left: v.$padingValue;
@@ -10,17 +11,18 @@
 	padding-left: v.$padingValue;
 
 	&-main {
-        position: relative;
+		position: relative;
 		@extend .container;
-		height: 25cm;
-		width: 30cm;
+		// height: 20cm;
+		height: v.$heightContainer;
+		width: 25cm;
 		background-color: v.$mainTaskConatiner;
 		border-radius: 20px;
-        @include contentComingInAimation; 
+		@include contentComingInAimation;
 	}
 
-    &-title{
-        position: absolute;
-        color: v.$textColour;
-    }
+	&-title {
+		position: absolute;
+		color: v.$textColour;
+	}
 }

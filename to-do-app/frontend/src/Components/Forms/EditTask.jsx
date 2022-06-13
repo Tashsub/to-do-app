@@ -7,6 +7,7 @@ import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import "../../scss/buttons.scss";
 import { api } from "../../api";
 import LoginContext from "../../Context/LoginContext";
+import toast from "react-hot-toast";
 
 function EditTask({ taskId, taskTitle, taskDescription, taskPriority }) {
 	const { closeModal } = useContext(ModalContext);
@@ -47,10 +48,10 @@ function EditTask({ taskId, taskTitle, taskDescription, taskPriority }) {
 		api
 			.put(endpointWithId, task)
 			.then((response) => {
-				console.log(response);
+				toast.success(response.data.message);
 			})
 			.catch((error) => {
-				console.log("can not update because of " + error);
+				toast.error("Could not update task:  " + error.message);
 			});
 
 		closeModal();
@@ -64,9 +65,10 @@ function EditTask({ taskId, taskTitle, taskDescription, taskPriority }) {
 			.then((response) => {
 				console.log(response);
 				closeModal();
+				toast.success(response.data.message);
 			})
 			.catch((error) => {
-				console.log("Can not delete this task because of " + error);
+				toast.error("Task could not be deleted because " + error.message );
 			});
 	};
 
@@ -109,7 +111,7 @@ function EditTask({ taskId, taskTitle, taskDescription, taskPriority }) {
 				</textarea>
 			</div>
 			<div className="default-div-margin-left">
-				<p className=".change-font">Task Priority:</p>
+				<p className="change-font-bold">Task Priority:</p>
 
 				<div>
 					<input
@@ -123,7 +125,7 @@ function EditTask({ taskId, taskTitle, taskDescription, taskPriority }) {
 							getPriority(e.target.value);
 						}}
 					/>
-					<label htmlFor="no">Not Important</label>
+					<label className="change-font" htmlFor="no">Not Important</label>
 				</div>
 				<div>
 					<input
@@ -136,7 +138,7 @@ function EditTask({ taskId, taskTitle, taskDescription, taskPriority }) {
 							getPriority(e.target.value);
 						}}
 					/>
-					<label htmlFor="yes">Important</label>
+					<label className="change-font" htmlFor="yes">Important</label>
 				</div>
 			</div>
 			<div className="form-buttons-div-v2">

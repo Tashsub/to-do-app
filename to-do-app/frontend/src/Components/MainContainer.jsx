@@ -6,9 +6,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import ModalContext from "../Context/ModalContext";
 import AddTask from "./Forms/AddTask";
+import TaskContext from "../Context/TaskContext";
+import { modes } from "../Context/Modes";
 
 export default function MainContainer() {
 	const { openModal, addContent } = useContext(ModalContext);
+	const { mode } = useContext(TaskContext);
 
 	const buttonHandler = () => {
 		addContent(<AddTask />);
@@ -29,9 +32,11 @@ export default function MainContainer() {
 			<h1 className="container-title">Tasks</h1>
 			<Tasks toggleModal={toggleModalOnTask} />
 
-			<button onClick={buttonHandler} className="button-circle">
-				{icon}
-			</button>
+			{mode === modes.home && (
+				<button onClick={buttonHandler} className="button-circle">
+					{icon}
+				</button>
+			)}
 		</div>
 	);
 }

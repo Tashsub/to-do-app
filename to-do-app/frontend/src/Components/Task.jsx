@@ -1,10 +1,9 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import "../scss/Task.scss";
 import "../scss/Inputs.scss";
 import StarCheckBox from "./Inputs/StarCheckBox";
 import TickCheckBox from "./Inputs/TickCheckBox";
 import "../scss/Animations.scss";
-import ModalContext from "../Context/modalContext";
 import EditTask from "./Forms/EditTask";
 
 export default function Task({
@@ -15,7 +14,6 @@ export default function Task({
 	toggleModal,
 	description,
 }) {
-	const { addContent, openModal } = useContext(ModalContext);
 
 	const [showEdit, setShowEdit] = useState(false);
 

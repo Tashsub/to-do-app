@@ -5,9 +5,10 @@ $paddingVal: 10px;
 
 $borderCol: #757676;
 
+$fontDefaultSize: 18px;
+
 p,
 input,
-.change-font,
 label,
 textarea {
 	font-family: v.$defaultFontFamily;
@@ -15,10 +16,19 @@ textarea {
 	color: $borderCol;
 }
 
+.change-font {
+	font-family: v.$defaultFontFamily;
+	font-size: $fontDefaultSize;
+	&-bold{
+		font-weight: bold;
+		font-size: calc($fontDefaultSize - 1px);
+	}
+}
+
 .default-form {
 	overflow: hidden;
-	font-size: 25px;
 }
+
 @mixin FormVal($mt, $w) {
 	margin-top: $mt;
 	width: $w;
@@ -32,6 +42,7 @@ textarea {
 
 .form-half-width {
 	@extend .default-form;
+	position: relative;
 	// @include FormVal(60px, 100%);
 }
 
@@ -54,7 +65,7 @@ textarea {
 
 .input-field {
 	padding-left: 14px;
-	font-size: 22px;
+	font-size: $fontDefaultSize;
 	width: 90%;
 }
 
@@ -75,26 +86,25 @@ textarea {
 	color: $borderCol;
 	resize: none;
 	border-color: $borderCol;
-	height: 3cm;
+	height: 2cm;
 }
 
 .radio-button {
 	margin-bottom: 10px;
 	padding: 0.5em;
-	height: 18px;
-	width: 18px;
+	height: 13px;
+	width: 13px;
 }
 
 .form-buttons-div-default {
-	border: 1px solid black;
-	height: 1.4cm;
+	//border: 1px solid black;
+	// height: 1.4cm;
 	width: auto;
 	@include centerItemsInDiv;
 }
 
 .form-buttons-div {
 	@extend .form-buttons-div-default;
-
 }
 
 .form-buttons-div-v2 {

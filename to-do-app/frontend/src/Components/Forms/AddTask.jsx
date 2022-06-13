@@ -5,6 +5,7 @@ import TaskContext from "../../Context/TaskContext";
 import LoginContext from "../../Context/LoginContext";
 import { api } from "../../api";
 import { nanoid } from "nanoid";
+import toast from "react-hot-toast";
 
 function AddTask() {
 	const { closeModal } = useContext(ModalContext);
@@ -43,10 +44,16 @@ function AddTask() {
 			priority,
 		};
 
-		api.post("tasks", task).then((result) => {
-			addTask(result.data);
-		});
-		closeModal();
+		api
+			.post("tasks", task)
+			.then((result) => {
+				addTask(result.data);
+				closeModal();
+				toast.success("Task added successfully");
+			})
+			.catch((error) => {
+				toast.error("Task could not be added: " + error.message);
+			});
 	};
 
 	const closeButtonHandler = (e) => {
@@ -55,7 +62,7 @@ function AddTask() {
 	};
 
 	return (
-		<form className="form" onSubmit={submitHandler} >
+		<form className="form" onSubmit={submitHandler}>
 			<div className="default-div-center">
 				<input
 					type="text"
@@ -79,7 +86,7 @@ function AddTask() {
 				></textarea>
 			</div>
 			<div className="default-div-margin-left">
-				<p className=".change-font">
+				<p className="change-font">
 					Would you like to make this task a priority?
 				</p>
 				<div>
@@ -94,7 +101,9 @@ function AddTask() {
 							getPriority(e.target.value);
 						}}
 					/>
-					<label htmlFor="no">No</label>
+					<label className="change-font" htmlFor="no">
+						No
+					</label>
 				</div>
 				<div>
 					<input
@@ -107,7 +116,9 @@ function AddTask() {
 							getPriority(e.target.value);
 						}}
 					/>
-					<label htmlFor="yes">Yes</label>
+					<label className="change-font" htmlFor="yes">
+						Yes
+					</label>
 				</div>
 			</div>
 			<div className="form-buttons-div">

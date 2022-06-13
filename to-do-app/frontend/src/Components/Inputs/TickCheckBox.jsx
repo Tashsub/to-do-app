@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "../../scss/Inputs.scss";
 import { api } from "../../api";
+import toast from "react-hot-toast";
 
 export default function TickCheckBox({ completed, taskId }) {
 
@@ -22,10 +23,10 @@ export default function TickCheckBox({ completed, taskId }) {
 		api
 			.put(endpointWithId, task)
 			.then((response) => {
-				console.log(response);
+				//console.log(response);
 			})
 			.catch((error) => {
-				console.log("could not update commpleted status: " + error.message);
+				//toast.error("could not update commpleted status: " + error.message);
 			});
 	}
 

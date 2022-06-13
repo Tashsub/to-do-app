@@ -4,6 +4,7 @@ import { faStar as faSolidStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as faRegularStar } from "@fortawesome/free-regular-svg-icons";
 import "../../scss/Inputs.scss";
 import { api } from "../../api";
+import toast from "react-hot-toast";
 
 export default function StarCheckBox({ priority, taskId }) {
 	const [priorityOfTask, setPriorityOfTask] = useState(priority);
@@ -20,10 +21,10 @@ export default function StarCheckBox({ priority, taskId }) {
 		api
 			.put(endpointWithId, task)
 			.then((response) => {
-				console.log(response);
+				//console.log(response);
 			})
 			.catch((error) => {
-				console.log("could not update priority: " + error.message);
+				toast.error("could not update priority: " + error.message);
 			});
 	}
 
