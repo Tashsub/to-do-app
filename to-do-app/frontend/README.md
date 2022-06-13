@@ -21,3 +21,5 @@ Future improvements
 
 Use loading animations for loading background and etc.. 
 (loading animations)[https://www.npmjs.com/package/react-loader-spinner]
+
+(Deploying solution, refer back for later use)[https://www.youtube.com/watch?v=5dQC2JUd27g&ab_channel=LamaDev]
