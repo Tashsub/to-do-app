@@ -1,10 +1,9 @@
 import React, { useContext, useState } from "react";
 import ModalContext from "../../Context/ModalContext";
-import TaskContext from "../../Context/TaskContext";
 import "../../scss/Forms.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
-import "../../scss/buttons.scss";
+import "../../scss/Buttons.scss";
 import { api } from "../../api";
 import LoginContext from "../../Context/LoginContext";
 import toast from "react-hot-toast";
