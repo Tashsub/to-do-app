@@ -19,7 +19,7 @@ The Idea started of with a prototype design that was made in Figma. The designgs
 
 [The Figma designs can be viewed here](https://www.figma.com/file/hgbQvzJaLgxaykmIgUexjM/To-Do-App?node-id=0%3A1)
 
-## Final Result 
+## Live APP / Final Result 
 
 The Web App can be accessed on the link below
 
@@ -32,12 +32,14 @@ Currently the live app has no login system, which is a feature that is being wor
 
 This application was made using a MERN approach. 
 
-Meaning the primary tools were 
+Meaning the primary tools were: 
 
 - MongoDB - for storing the data
 - Node/Express - for the server and api
 - React - for the front end
 - Heroku - easily deploy the frontend and backend on one instance. Ideally in the future it would be good to have the backend and front end running on two different servers. 
+
+The frontend consisted of React and SASS. 
 
 ## API Endpoints
 
@@ -49,6 +51,15 @@ There application makes use of ** REST ** technology and uses 4 endpoints.
 
 ## Database Design
 
+The database design was also thought about. Although one of the benefits of using MongoDB is to have embedded relations the database design seen below proves to be better since a user can have many tasks and allows for flexible changes to be made. 
+
+[Database design](https://lucid.app/lucidchart/44b77d5a-5a63-4511-84db-15443248a106/edit?viewport_loc=-173%2C-134%2C2705%2C1534%2C0_0&invitationId=inv_5773ada6-3309-4762-9643-da3eccf85c99#)
+
+---
+
+### Useful resources
+
+
 (checkboxes package source 1)[https://pretty-checkbox.netlify.app/docs/checkbox/]
 
 (checkboxes package source 2)[https://lokesh-coder.github.io/pretty-checkbox/#basic-checkbox]
@@ -57,13 +68,9 @@ https://mui.com/
 
 https://stryker-mutator.io/
 
----
-
-### Useful resources
-
 (Types in MongoDb)[https://kb.objectrocket.com/mongo-db/mongoose-schema-types-1418] (refs in mongodb)[https://www.youtube.com/watch?v=7xYMulfv-PU&ab_channel=MicroUrb] (Toast Messages)[https://jossmac.github.io/react-toast-notifications/]
 
-Future improvements
+# Future improvements
 
 Use loading animations for loading background and etc.. (loading animations)[https://www.npmjs.com/package/react-loader-spinner]
 
