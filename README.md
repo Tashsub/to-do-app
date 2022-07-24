@@ -39,7 +39,7 @@ Meaning the primary tools were:
 - React - for the front end
 - Heroku - easily deploy the frontend and backend on one instance. Ideally in the future it would be good to have the backend and front end running on two different servers. 
 
-The frontend consisted of React and SASS. 
+The frontend consisted of React and SCSS. 
 
 ## API Endpoints
 
