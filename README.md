@@ -43,7 +43,7 @@ The frontend consisted of React and SCSS.
 
 ## API Endpoints
 
-There application makes use of ** REST ** technology and uses 4 endpoints. 
+There application makes use of **REST** technology and uses 4 endpoints. 
 - Post task: to create a new task. There is validation here when the modal appears such as, the task name can not be empty. 
 - Put Task: update an existing task. 
 - Get tasks: gets all the tasks from the DB. 
