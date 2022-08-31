@@ -4,6 +4,14 @@ I often find myself having lots of tasks to do throughout the day. Why not expie
 The App allows for a user to create a task, update a task, delete a task and read the existing tasks. Tasks can be 
 This side project was to see how far I could push my React skills and my CSS. Overall this was a good experience. 
 
+## Live APP / Final Result 
+
+The Web App can be accessed on the link below
+
+[Live App Can be viewed here](https://to-do-app-rocket.herokuapp.com/)
+
+Currently the live app has no login system, which is a feature that is being worked on to allow for multiple users. 
+
 # Feature List
 
 - Create/Read/Update/Delete tasks. 
@@ -18,14 +26,6 @@ This side project was to see how far I could push my React skills and my CSS. Ov
 The Idea started of with a prototype design that was made in Figma. The designgs eveloved over time, where the initial designs and ideas can be seen below. 
 
 [The Figma designs can be viewed here](https://www.figma.com/file/hgbQvzJaLgxaykmIgUexjM/To-Do-App?node-id=0%3A1)
-
-## Live APP / Final Result 
-
-The Web App can be accessed on the link below
-
-[Live App Can be viewed here](https://to-do-app-rocket.herokuapp.com/)
-
-Currently the live app has no login system, which is a feature that is being worked on to allow for multiple users. 
 
 
 # Tech Stack :computer:
